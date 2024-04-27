@@ -1,0 +1,47 @@
+spring:
+  datasource:
+    postgres: # Postgres
+      url: jdbc:postgresql://rain.db.elephantsql.com:5432/xbpeizgh
+      username: xbpeizgh
+      password: rQblZ9eUJM8am7TfNRDIujU_sB2K1kYd
+      driver-class-name: org.postgresql.Driver
+      hikari: # HikariCP
+        pool-name: postgres-hikariPool
+        maximum-pool-size: 2
+        connection-timeout: 2000
+    mysql: # MySQL
+      url: jdbc:mysql://sql6.freesqldatabase.com:3306/sql6702357
+      username: sql6702357
+      password: i6Bunhgej1
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      hikari: # HikariCP
+        pool-name: mysql-hikariPool
+        maximum-pool-size: 2
+        connection-timeout: 2000
+  jpa:
+    #Spring Boot and OSIV
+    #Unfortunately, OSIV (Open Session in View) is enabled by default in Spring Boot, and OSIV is really a bad idea from a performance and scalability perspective.
+    open-in-view: false # Disabling (false) OpenInView pattern for having multiple EntityManager and also (better performance)
+    generate-ddl: true # Automatically create tables based on the entities for multiple databases
+    show-sql: true # Show SQL queries in the console
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+        use_sql_comments: true
+  main:
+    banner-mode: console
+  banner:
+    location: vedha_banner.txt
+
+logging:
+  level:
+    com:
+      zaxxer:
+        hikari: TRACE
+    org:
+      springframework:
+        jdbc:
+          core: TRACE

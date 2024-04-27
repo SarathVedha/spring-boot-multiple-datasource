@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: Spring-Boot-Multiple-DataSource
+  profiles:
+    active: dev
