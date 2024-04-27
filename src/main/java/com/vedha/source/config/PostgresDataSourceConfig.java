@@ -13,6 +13,7 @@ import org.springframework.jdbc.core.simple.JdbcClient;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.transaction.PlatformTransactionManager;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import java.util.Objects;
 
@@ -22,6 +23,7 @@ import java.util.Objects;
         entityManagerFactoryRef = "postgresEntityManagerFactory", // The name of the EntityManagerFactory bean for the Postgres database
         transactionManagerRef = "postgresTransactionManager" // The name of the TransactionManager bean for the Postgres database
 )
+@EnableTransactionManagement
 public class PostgresDataSourceConfig {
 
     @Bean

@@ -14,6 +14,7 @@ import org.springframework.jdbc.core.simple.JdbcClient;
 import org.springframework.orm.jpa.JpaTransactionManager;
 import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 import org.springframework.transaction.PlatformTransactionManager;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 import java.util.Objects;
 
@@ -23,6 +24,7 @@ import java.util.Objects;
         entityManagerFactoryRef = "mysqlEntityManagerFactory", // The name of the EntityManagerFactory bean for the MySQL database
         transactionManagerRef = "mysqlTransactionManager" // The name of the TransactionManager bean for the MySQL database
 )
+@EnableTransactionManagement
 public class MySqlDataSourceConfig {
 
     // Create a DataSourceProperties for the MySQL database

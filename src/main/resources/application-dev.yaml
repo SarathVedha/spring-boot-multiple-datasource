@@ -1,18 +1,18 @@
 spring:
   datasource:
     postgres: # Postgres
-      url: jdbc:postgresql://rain.db.elephantsql.com:5432/xbpeizgh
-      username: xbpeizgh
-      password: rQblZ9eUJM8am7TfNRDIujU_sB2K1kYd
+      url: jdbc:postgresql://rain.db.elephantsql.com:5432/db
+      username: username
+      password: password
       driver-class-name: org.postgresql.Driver
       hikari: # HikariCP
         pool-name: postgres-hikariPool
         maximum-pool-size: 2
         connection-timeout: 2000
     mysql: # MySQL
-      url: jdbc:mysql://sql6.freesqldatabase.com:3306/sql6702357
-      username: sql6702357
-      password: i6Bunhgej1
+      url: jdbc:mysql://sql6.freesqldatabase.com:3306/db
+      username: username
+      password: password
       driver-class-name: com.mysql.cj.jdbc.Driver
       hikari: # HikariCP
         pool-name: mysql-hikariPool
